@@ -287,13 +287,52 @@ class DataLoan{
 				break;
 			}
 		}
+		
+		//Getting forth user input
+		int forthNum=LoanService.ss.nextInt();
+		if(thirdNum==1) {
+			switch(forthNum) {
+			 case 1:
+				 Common.mainMassages();
+				 break;
+			 case 2:
+				 System.out.println(Common.thanking);
+				 break;
+			 default:
+				 System.out.println(Invalid.invalid);
+				 break;
+			}
+		}
 	}
 	
 }
 
 
 class SpecialOffers{
-	
+	void offerValidity() {
+	  for(int i=0;i<3;++i) {
+	      if(Balance.month==Balance.offersMonth[i]) {
+			System.out.println("");
+		  }else {
+			  System.out.println("Sorry,No Special offers available for you at the moment.");  
+			  for(int j=1;j<3;++j) {
+				  System.out.println(j+". "+Common.commonArr[j-1]);
+			  }
+			  int fifthNum=LoanService.ss.nextInt();
+			  switch(fifthNum) {
+			    case 1:
+			    	Common.mainMassages();
+			    	break;
+			    case 2:
+			    	 System.out.println(Common.thanking);
+			    	break;
+			    default:
+			    	System.out.println(Invalid.invalid);
+			    	break;
+			  }
+		  }
+	  }
+	}
 }
 
 
@@ -306,6 +345,13 @@ class Other{
 	 public static final double balance=3.0;
 	 public static final boolean isUnpaidLoanBalance=false;
 	 public static final double duration=7;
+	 public static final String month="February";
+	 public static String[] offersMonth= {
+			 "January",
+			 "April",
+			 "December",
+	 };
+	 
  }
  
  
