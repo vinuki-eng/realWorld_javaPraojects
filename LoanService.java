@@ -34,6 +34,8 @@ class Common{
 			"1.5GB(Anytime)",
 	};
 	
+	public static String confermation="Please await conformation from SLT-Mobitel.";
+	
 	public static String thanking="Thank You";
 	
 	public static String validity14="Validity 14 days";
@@ -88,8 +90,10 @@ class Common{
 		
 		switch(firstNum) {
 		   case 1:
+			   cb.checkBalanceInfo();
 			   break;
 		   case 2:
+			    
 			   break;
 		   case 3:
 			   
@@ -120,6 +124,58 @@ class Common{
 
 
 class CheckBalance{
+	String [] clickCheckBalance= {
+			"Data Balance",
+			"Freedom Balance",
+			"Back",
+			"Exit",
+	};
+	
+	  void checkBalanceInfo() {
+		for(int i=1;i<5;++i) {
+			System.out.println(i+". "+clickCheckBalance[i-1]);
+		}
+		
+		int secondNum=LoanService.ss.nextInt();
+		
+		switch(secondNum) {
+		  case 1:
+			  System.out.println(Common.confermation);
+			  System.out.println(Common.thanking);
+			  break;
+		  case 2:
+			  if( Balance.isSubscribedtoSmartFreedom==true) {
+				  
+			  }else {
+				  System.out.println("Currently you have not subscribed to Smart Freedom.To activate dial 141 select 6 and follow the voice promptes");
+				  for(int j=2;j<4;++j) {
+					  System.out.println(j+". "+Common.commonArr[j-2]);
+				  }
+				  
+				  int thirdNum=LoanService.ss.nextInt();
+				  
+				  switch(thirdNum) {
+				    case 2:
+				    	break;
+				    case 3:
+				    	System.out.println(Common.thanking);
+				    	break;
+				    default:
+				    	 System.out.println(Invalid.invalid);
+				    	break;
+				  }
+			  }
+			  break;
+		  case 3:
+			  break;
+		  case 4:
+			  System.out.println(Common.thanking);
+			  break;
+		  default:
+			  System.out.println(Invalid.invalid);
+			  break;
+		}
+	}
 	
 }
 
@@ -351,6 +407,8 @@ class Other{
 			 "April",
 			 "December",
 	 };
+	 
+	 public static final boolean isSubscribedtoSmartFreedom=false;
 	 
  }
  
