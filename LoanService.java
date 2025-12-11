@@ -102,11 +102,13 @@ class Common{
 		   case 5:
 			   break; 
 		   case 6:
+			   usm.usmMessages();
 			   break;	
 		   case 7:
 			   dl.loanOptions();
 			   break; 
 		   case 8:
+			   so.offerValidity();
 			   break;
 		   case 9:
 			   break;
@@ -156,6 +158,7 @@ class CheckBalance{
 				  
 				  switch(thirdNum) {
 				    case 2:
+				    	 checkBalanceInfo();
 				    	break;
 				    case 3:
 				    	System.out.println(Common.thanking);
@@ -167,6 +170,7 @@ class CheckBalance{
 			  }
 			  break;
 		  case 3:
+			  checkBalanceInfo();
 			  break;
 		  case 4:
 			  System.out.println(Common.thanking);
@@ -196,6 +200,38 @@ class AviatorHDPlan{
 }
 
 class UnlimitedSocialMedia{
+	String usmMsg[]= {
+			"Non-stop work&play",
+			"Rs.699 9-N-1 plus",
+			
+	};
+	void usmMessages() {
+		for(int i=1;i<5;++i) {
+			if(i<3) {
+			    System.out.println(i+" ."+usmMsg[i-1]);
+			}else {
+				System.out.println(i+" ."+Common.commonArr[i-3]);
+			}
+		}
+		
+		int secondNum=LoanService.ss.nextInt();
+		
+		switch(secondNum) {
+		  case 1:
+			  break;
+		  case 2:
+			  break;
+		  case 3:
+			  Common.mainMassages();
+			  break;
+		  case 4:
+			  System.out.println(Common.thanking);
+			  break;
+		  default:
+			  System.out.println(Invalid.invalid);
+			  break;
+		}
+	}
 	
 }
 
