@@ -218,8 +218,24 @@ class UnlimitedSocialMedia{
 		
 		switch(secondNum) {
 		  case 1:
+			  System.out.println("NonStop Usage-YouTube,Google,FB,WhatsApp,Zoom,Teams,O365,TikTok,Insta,Spotify,Google,Meet,Messenger+1GB Bonus DATA.For 7 days.FUP,T&C apply");
+			  for(int j=1;j<4;++j) {
+				  if(j<2) {
+				     System.out.println(j+". "+"Activate");
+				  }else {
+					 System.out.println(j+". "+Common.commonArr[j-2]); 
+				  }
+			  }
 			  break;
 		  case 2:
+			  System.out.println("NonStop Usage-YouTube,Google,FB,WhatsApp,Zoom,Teams,O365,TikTok,Insta,Spotify,Google,Meet,Messenger+1GB Bonus DATA.For 30 days.FUP,T&C apply");
+			  for(int j=1;j<4;++j) {
+				  if(j<2) {
+				     System.out.println(j+". "+"Activate");
+				  }else {
+					 System.out.println(j+". "+Common.commonArr[j-2]); 
+				  }
+			  }
 			  break;
 		  case 3:
 			  Common.mainMassages();
@@ -230,6 +246,23 @@ class UnlimitedSocialMedia{
 		  default:
 			  System.out.println(Invalid.invalid);
 			  break;
+		}
+		
+		int thirdNum=LoanService.ss.nextInt();
+		
+		switch(thirdNum) {
+		   case 1:
+			   System.out.println(Common.activation);
+			  break;
+		   case 2:
+			   usmMessages();
+			  break;
+		   case 3:
+			   System.out.println(Common.thanking);
+			  break;
+			default:
+				 System.out.println(Invalid.invalid);
+				break;
 		}
 	}
 	
